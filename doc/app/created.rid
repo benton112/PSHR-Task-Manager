@@ -1,0 +1,24 @@
+Tue, 28 Jan 2014 23:10:23 +0400
+README.rdoc	Wed, 01 Jan 2014 23:30:52 +0400
+app/controllers/application_controller.rb	Fri, 24 Jan 2014 13:39:36 +0400
+app/controllers/chat_controller.rb	Sat, 25 Jan 2014 14:15:56 +0400
+app/controllers/messages_controller.rb	Fri, 24 Jan 2014 13:41:52 +0400
+app/controllers/months_controller.rb	Tue, 14 Jan 2014 15:25:36 +0400
+app/controllers/notes_controller.rb	Mon, 20 Jan 2014 14:10:06 +0400
+app/controllers/tasks_controller.rb	Tue, 14 Jan 2014 15:26:51 +0400
+app/controllers/users_controller.rb	Sat, 25 Jan 2014 14:03:36 +0400
+app/controllers/welcome_controller.rb	Sun, 05 Jan 2014 16:19:16 +0400
+app/controllers/years_controller.rb	Tue, 14 Jan 2014 15:25:58 +0400
+app/helpers/application_helper.rb	Thu, 23 Jan 2014 14:52:47 +0400
+app/helpers/chat_helper.rb	Wed, 22 Jan 2014 23:28:38 +0400
+app/helpers/messages_helper.rb	Wed, 22 Jan 2014 13:56:11 +0400
+app/helpers/months_helper.rb	Mon, 13 Jan 2014 11:26:13 +0400
+app/helpers/notes_helper.rb	Tue, 14 Jan 2014 23:38:41 +0400
+app/helpers/tasks_helper.rb	Tue, 14 Jan 2014 14:12:37 +0400
+app/helpers/users_helper.rb	Sat, 25 Jan 2014 13:33:48 +0400
+app/helpers/welcome_helper.rb	Sun, 05 Jan 2014 16:19:16 +0400
+app/helpers/years_helper.rb	Mon, 13 Jan 2014 11:28:24 +0400
+app/models/message.rb	Fri, 24 Jan 2014 13:37:00 +0400
+app/models/note.rb	Tue, 14 Jan 2014 23:42:37 +0400
+app/models/task.rb	Tue, 14 Jan 2014 13:53:25 +0400
+app/models/user.rb	Sat, 25 Jan 2014 14:34:39 +0400
