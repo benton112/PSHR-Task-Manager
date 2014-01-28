@@ -1,0 +1,12 @@
+
+  <% current_user.contactList.each do |c| %>
+  <div class="user <%= cycle("odd", "even") -%>">
+  <b>
+  	<%= link_to c.surname + " "+ c.name, controller: 'chat', action: 'get_messages', id: c.id , remote: true%>
+  </b>
+  </div>
+
+  <% end %>
+<div class="user new">
+ <%= link_to "Новый диалог" %>
+</div>

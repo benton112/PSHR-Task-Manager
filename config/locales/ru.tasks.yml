@@ -1,0 +1,9 @@
+ru:
+    english: english
+    russian: русский
+    notes:
+        notes:
+            new_message: Добавить заметку
+    tasks:
+        header:
+            title: &titleTask Задачи для %{username}

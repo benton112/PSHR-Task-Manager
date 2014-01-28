@@ -1,0 +1,9 @@
+en:
+    english: english
+    russian: русский
+    notes:
+        notes:
+            new_message: Add Memo
+    tasks:
+        header:
+            title: &titleTask Tasks for %{username}

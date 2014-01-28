@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+*/
+
+a{
+	 text-decoration: underline !important;
+}
+.btn {
+	text-decoration: none !important;;
+}
+
+.table {
+	width: 100%;
+	 border: solid black 1px;
+}
+
+.table tbody tr td, .table thead tr th{
+	text-align: center;
+	font-size: 9pt;
+}
+.table tbody tr td{
+	height:15px;
+}
+
+.tableContainer{
+	width: 100%;
+	overflow-x: scroll;
+}
+.link_container{
+	width: 100%;
+	padding: 10px 0px;
+}
+.link_prev{
+	float: left;
+}
+.link_fwd{
+	float: right;
+}
+
+
+

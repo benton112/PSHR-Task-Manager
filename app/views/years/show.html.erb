@@ -1,0 +1,55 @@
+<%- model_class = Task -%>
+
+<%#= @year%>
+<%= render :partial => 'tasks/header'%>
+
+<div class="link_container">
+<%= link_to 'All', years_path, :class => "link_prev" %><br/>
+<%= link_to '<--', year_path(@yearEnd.year - 1), :class => "link_prev" %>
+<%= link_to '-->', year_path(@yearEnd.year + 1), :class => "link_fwd" %>
+</div>
+
+
+
+<div class="tableContainer">
+<table rules="all" class="table table-striped">
+<thead>
+<tr>
+ <th rowspan="2" class="topBorder">Name</th> 
+  <th colspan="12">
+  <%= @yearEnd.year %>
+  </th>
+</tr>
+<tr>
+    <% 12.times do |n| %>
+      <th>
+          <%= link_to  I18n.t("date.month_names")[n+1], year_month_path(@yearEnd.year,n+1) %>
+ 
+      </th>
+    <% end %>
+
+</tr>
+</thead>
+<tbody>
+<% @tasks.each do |task| %>
+
+
+<tr>
+  <td><%= task.name%></td>
+    <% 12.times do |n| %>
+      <% d1 = Date.new(@yearEnd.year, n+1,1)+ 1.month %>
+      <% d2 = Date.new(@yearEnd.year, n+1,1) - 1.day%>
+      
+          <% if  task.begin  < d1 && task.end >= d2 %>
+          <td style="background-color:#<%=task.color%>; cursor: pointer" onclick="redirect_to_task('<%= task_path(task)%>')">
+          <%else%>
+          <td>
+          <%end%>
+      </td>
+    <% end %>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+<%= render :partial => 'tasks/footer'%>

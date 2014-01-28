@@ -1,0 +1,14 @@
+<h1>Chat#get_messages</h1>
+<p>Find me in app/views/chat/get_messages.html.erb</p>
+<% @chat.each do |m| %>
+
+	<%if m.to == current_user %>
+		<span class="in">
+	<%else%>
+		<span class="out">
+	<%end%>
+	<%= m.text %>
+
+	</span>
+	<br/>
+<% end %>

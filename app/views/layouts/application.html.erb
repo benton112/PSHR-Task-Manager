@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stend</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://127.0.0.1:9292/faye.js"  %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
+<% if !@notes.nil? %>
+<div id="notes" class="notes_container">
+
+  <%= render :partial => "notes/notes" %>
+
+</div>
+<% end %>
+
+<% if !@messages.nil? %>
+
+<div id="msgs" class="msgs_container">
+
+  <%= render :partial => "messages/chat" %>
+
+</div>
+<% end %>
+
+<div style="float:right; padding-right: 10px">
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<br/>
+<%= link_to_if params[:locale] !='en', t('english'), params.merge(:locale => 'en')%> / 
+<%= link_to_if params[:locale] !='ru', t('russian'), params.merge(:locale => 'ru')%>
+
+</div>
+
+<%= yield %>
+
+</body>
+</html>

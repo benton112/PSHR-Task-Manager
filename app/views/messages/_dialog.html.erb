@@ -1,0 +1,17 @@
+<% if !@chat.nil? %>
+	<% @chat.each do |m| %>
+
+		<%if m.to == current_user %>
+			<div class="in">
+		<%else%>
+			<div class="out">
+		<%end%>
+		<i><%=l m.created_at, format: :short %></i><br/>
+		<%= m.text %>
+
+		</div>
+		<br/>
+	<% end %>
+	<div class="spacer" style="clear: both;"></div>
+<% end %>
+

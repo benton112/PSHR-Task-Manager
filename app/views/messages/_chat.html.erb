@@ -1,0 +1,20 @@
+
+<% if !current_user.nil? %>
+
+<div class="chat">
+<div class="header"><b>Сообщения</b>
+</div>
+
+<div class="user_list">
+<%= render :partial => 'messages/users'%>
+</div>
+<div id="chat22">
+	<div id="dialog">
+		<%= render :partial => 'messages/dialog'%>
+	</div>
+	<div id="input">
+
+	</div>
+</div>
+<%end%>
+</div>

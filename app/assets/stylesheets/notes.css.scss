@@ -1,0 +1,43 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.notes_container{
+	position: absolute;
+	top: 410px;
+	//top: 790px;
+
+	left: 1040px;
+	width: 400px;
+	height: 400px;
+	background-color: #f0f1dd;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #FDD017;
+	}
+#notes .header{
+	font-weight: bold;
+
+	width: 100%;
+	background-color: #FDD017;
+
+
+}
+#notes .header b{
+	display: inline-block;
+	padding: 4px;
+}
+.note{
+font-style: italic;
+
+	float: left;
+	margin: 10px 6px;
+	width: 96%
+
+}
+.text{
+		float: left;
+	width: 90%;
+}
+.button{
+	float: right;
+}

@@ -1,0 +1,27 @@
+
+<%= form_for @new_msg, :format => 'js', :html => { :class => 'form-horizontal' } , remote: true do |f| %>
+    <%= f.hidden_field :to_id, :value => params[:id] %>
+
+      <%= f.text_field :text, :class => 'text_field', :id => 'input_field' %>
+
+    <%= f.submit 'Отпр', :class => 'button btn ' %>
+
+
+<% end %>
+  
+<script type="text/javascript">
+
+ var faye = new Faye.Client('http://localhost:9292/faye');
+ faye.subscribe('/chat', function(message){
+    if (message = 'update'){
+  $.ajax({
+      url: "<%= url_for controller: 'chat', action: 'update_messages', id: params[:id], format: 'js' %>",
+      type: 'get',
+      context: this,
+      dataType: 'script',
+     });     
+  }
+ });
+
+
+</script>

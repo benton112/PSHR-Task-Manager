@@ -1,0 +1,6 @@
+<%= current_user.name%> <%= current_user.surname%> 
+<% if !@messages.nil? %>
+
+  <%= render :partial => "messages/chat" %>
+
+<% end %>

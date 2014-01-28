@@ -1,0 +1,94 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.msgs_container{
+	position: absolute;
+	// top: 790px;
+	top: 410px;
+	left: 0px;
+	width: 400px;
+	height: 400px;
+	background-color: gray;
+	overflow-y: scroll;
+	border: 1px solid #6698FF;
+}
+.chat .header{
+	font-weight: bold;
+	width: 100%;
+		background-color:#6698FF;
+}
+.chat .header b{
+	display: inline-block;
+	padding: 4px;
+}
+
+.chat{
+	float: left;
+	width: 100%;
+	background-color: #CFECEC;
+
+}
+.user_list{
+	width: 30%;
+	float: left;
+	height: 400px;
+	background-color:#A0CFEC;
+}
+.user_list .odd{
+	background-color: #659EC7;
+}
+.user_list .even{
+	background-color: #98AFC7;
+}
+.user_list .odd, .user_list .even{
+	width: 100%;
+	text-decoration: none;
+	padding: 10px 0px;
+
+	cursor: pointer;
+}
+.user_list .new{
+	padding-top:260px;
+}
+#chat22{
+	float: left;
+	width: 70%;
+	overflow-y: scroll;
+	height: 400px;
+}
+#dialog{
+
+}
+#dialog .in, #dialog .out{
+	border-radius: 8px;
+	border: 1px solid black;
+	clear: both;
+	padding: 5px;
+	margin: 6px 10px 0px;
+}
+#dialog .out{
+	background-color: #82CAFF;
+	float: right;
+	text-align: right;
+}
+#dialog .in{
+	background-color: #EDE275;
+	float: left;
+}
+#dialog i{
+	font-size: 80%;
+}
+#input{
+	float: left;
+	width: 100%;
+	padding: 10px;
+}
+#input .text_field{
+	width: 60%;
+
+}
+#input .button{
+	float: right;
+	margin-right: 26px;
+	margin-left: 4px;
+}

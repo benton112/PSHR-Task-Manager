@@ -1,0 +1,81 @@
+<%- model_class = Task -%>
+
+<%= render :partial => 'tasks/header'%>
+
+<div class="link_container">
+<%= link_to 'All', year_path(@date.year), :class => "link_prev" %><br/>
+<%= link_to '<--', year_month_path((@date - 1.month).year, (@date - 1.month).month), :class => "link_prev" %>
+<%= link_to '-->', year_month_path((@date + 1.month).year, (@date + 1.month).month), :class => "link_fwd" %>
+</div>
+
+
+<div class="tableContainer">
+<table rules="all" class="table table-striped">	<thead>
+		<tr>
+			<th rowspan="3">Name</th> 
+			<% if @dateBegin.year == @date.year%>
+				<% if @date.year == @dateEnd.year%>
+					<th colspan="<%= @dateBegin.end_of_month.day + @date.end_of_month.day + @dateEnd.end_of_month.day%>"> <%= @date.year %> </th>
+				<% else %>
+					<th colspan="<%= @dateBegin.end_of_month.day + @date.end_of_month.day %>"> <%= @date.year %> </th>
+					<th colspan="<%= @dateEnd.end_of_month.day%>"> <%= @dateEnd.year %></th>
+				<% end %>
+			<% else %>
+				<% if @date.year == @dateEnd.year %>
+					<th colspan="<%= @dateBegin.end_of_month.day%>"><%= @dateBegin.year %></th>
+					<th colspan="<%= @date.end_of_month.day + @dateEnd.end_of_month.day%>"> <%= @date.year %> </th>
+				<% else %>
+					<th colspan="<%= @dateBegin.end_of_month.day %>"> <%= @dateBegin.year %> </th>
+					<th colspan="<%= @date.end_of_month.day %>"> <%= @date.year %> </th>
+					<th colspan="<%= @dateEnd.end_of_month.day%>"> <%= @dateEnd.year %> </th>
+				<% end %>
+			<% end %>
+		</tr>
+		<tr> 
+			<th colspan="<%= @dateBegin.end_of_month.day %>"> <%=l @dateBegin, format: :months %> </th>
+			<th colspan="<%= @date.end_of_month.day %>"> <%=l @date, format: :months %> </th>
+			<th colspan="<%= @dateEnd.end_of_month.day %>"> <%=l @dateEnd, format: :months %> </th>
+		</tr>
+		<tr>
+			<% @dateBegin.end_of_month.day.times do |d|%>
+			<th> <%= d+1 %> </th>
+			<% end %>
+			<% @date.end_of_month.day.times do |d|%>
+			<th> <%= d+1 %> </th>
+			<% end %>
+			<% @dateEnd.end_of_month.day.times do |d|%>
+			<th> <%= d+1 %> </th>
+			<% end %>
+		</tr>
+	</thead>
+
+	<tbody>
+	<% @tasks.each do |task| %>
+
+		<tr>
+
+			<td><%= task.name%></td>
+			<% [@dateBegin, @date, @dateEnd].each do |m|%>
+				<% m.end_of_month.day.times do |d| %>
+
+				    <% d1 = Date.new(m.year, m.month ,d+1) %>
+      				<% d2 = Date.new(m.year, m.month ,d+1) %>
+
+					<% if  task.begin  <= d1 && task.end > d2 %>
+          			<td style="background-color:#<%=task.color%>; cursor: pointer" onclick="redirect_to_task('<%= task_path(task)%>')">
+          			<%else%>
+          			<td>
+          			<% end %>
+
+				<% end %>
+			<% end %>
+		    
+		</tr>
+	<% end %>
+	</tbody>
+
+</table>
+</div>
+<%= render :partial => 'tasks/footer'%>
+
+

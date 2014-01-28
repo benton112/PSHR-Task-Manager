@@ -1,0 +1,29 @@
+<div class="header"><b>Заметки</b></div>
+<% @notes.each do |note| %>
+<div class="note">
+<%= best_in_place note, :note, :type => :input %>
+
+
+
+	<%= link_to '-',
+	note_path(note),
+	:method => :delete,
+	:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	:class => 'button btn btn-mini btn-danger',
+	:remote => true %>
+</div>
+<% end %>
+<div class="note">
+
+<%= form_for @note, :format => 'js', :html => { :class => 'form-horizontal' } , remote: true do |f| %>
+    <div class="text">
+      <%= f.text_field :note, :class => 'text_field', :value =>( t ('.new_message')) %>
+    </div>
+
+
+
+    <%= f.submit '+', :class => 'button btn btn-mini' %>
+
+<% end %>
+</div>
+</div>
